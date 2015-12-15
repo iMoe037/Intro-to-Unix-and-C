@@ -1,0 +1,32 @@
+Immad Mohamed CS 271
+
+
+immad@ubuntu:~$ cd CS271/Project1
+
+immad@ubuntu:~/CS271/Project1$ bash project1.txt
+
+Hi, please type your name: Immad Mohamed
+
+': not a valid identifierd: `word
+
+Welcome 
+
+immad@ubuntu:~/CS271/Project1$ vi project1.txt
+
+immad@ubuntu:~/CS271/Project1$ bash project1.txt
+
+Hi, please type your name: Immad Mohamed
+
+Welcome Immad Mohamed
+
+immad@ubuntu:~/CS271/Project1$ cc project1.c
+
+immad@ubuntu:~/CS271/Project1$ ./a.out
+
+Enter a number: 7
+
+Enter another number: 3
+
+7.000000 + 3.000000 = 10.000000
+
+
