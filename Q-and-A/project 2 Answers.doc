@@ -1,0 +1,120 @@
+Immad Mohamed CS271
+
+1. Make a directory (folder) named: proj2.
+Answer
+immad@ubuntu:~/CS271$ mkdir proj2
+
+
+2. Move to the folder: proje2
+Answer
+immad@ubuntu:~/CS271$ cd proj2
+
+immad@ubuntu:~/CS271/proj2$ 
+
+3. Copy the files a.txt and c.txt from your local machine to directory: proj2. Display the content of this folder.
+Answer
+immad@ubuntu:~/CS271/proj2$ cp /home/immad/Downloads/a.txt /home/immad/CS271/proj2
+
+immad@ubuntu:~/CS271/proj2$ cp /home/immad/Downloads/c.txt /home/immad/CS271/proj2
+
+immad@ubuntu:~/CS271/proj2$ dir
+
+a.txt  c.txt
+
+
+4. Copy the file a.txt to a new file named: b.txt
+Answer
+immad@ubuntu:~/CS271/proj2$ cp a.txt b.txt
+
+immad@ubuntu:~/CS271/proj2$ 
+
+
+5. Use the instruction: chmod to make the file: a.txt not-writeable.
+Answer
+immad@ubuntu:~/CS271/proj2$ chmod a.txt -r
+
+immad@ubuntu:~/CS271/proj2$ 
+6. Use the vi editor to load the file: a.txt and enter your name. Could you enter your name? Why? Why not?
+Note: You may need the instruction: q! to close the editor.
+Answer:
+"a.txt" [Permission Denied]
+
+It's read only you can't edit it.
+
+7. Delete the file: a.txt. Could you delete? Why? Why not?
+Answer:
+immad@ubuntu:~/CS271/proj2$ rm a.txt
+
+immad@ubuntu:~/CS271/proj2$ 
+
+Yes we can delete it because we have the proper permission in the directory.
+
+8. Load the file: b.txt into the vi editor, delete the first two lines and save the content of the editor to the file. Write a command to count the number of words of the file b.txt. Note: Your answer should be one number only.
+Answer
+immad@ubuntu:~/CS271/proj2$ vi b.txt
+DD first two lines
+Removed funky characters
+: wq
+immad@ubuntu:~/CS271/proj2$ wc -w b.txt
+
+30 b.txt
+
+
+9. Display the sorted content of the file: c.txt.
+Answer
+immad@ubuntu:~/CS271/proj2$ sort c.txt
+
+a
+
+An assembly language
+
+depends on the architecture
+
+is
+
+It is a counter part
+
+machine language. 
+
+of its computer.
+
+of the
+
+program
+
+UNIX
+
+written in C and assembly languages. 
+
+immad@ubuntu:~/CS271/proj2$ 
+
+10. Use the operation: > to copy the sorted content into a file named: d.txt.
+
+Answer
+immad@ubuntu:~/CS271/proj2$ sort c.txt > d.txt
+
+immad@ubuntu:~/CS271/proj2$ cat d.txt
+
+a
+
+An assembly language
+
+depends on the architecture
+
+is
+
+It is a counter part
+
+machine language. 
+
+of its computer.
+
+of the
+
+program
+
+UNIX
+
+written in C and assembly languages.  
+
+
