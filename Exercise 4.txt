@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <stdlib.h>;
+#include <stdio.h>
+
+int main()
+{	float currentEarnings, previousEarnings;
+
+		printf("This month's pay:\n");
+		scanf("%f",&currentEarnings);
+		printf("Previous pay:\n");
+		scanf("%f",&previousEarnings);
+
+	while (currentEarnings<0|| previousEarnings<0)
+	{
+		printf("This month's pay:\n");
+		scanf("%f",&currentEarnings);
+		printf("Previous pay:\n");
+		scanf("%f",&previousEarnings);
+	}
+
+		printf("This month: $%.2f\n", currentEarnings);
+		printf("Previous months: $%.2f\n", previousEarnings);
+		printf("FICA to withhold: $%.2f\n" , (currentEarnings + previousEarnings)*0.0006);
+		system("pause");
