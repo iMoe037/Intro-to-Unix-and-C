@@ -1,0 +1,42 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{	int hours, minutes, military;
+	char time[3];
+	printf("Enter the time in the format of 24-hours time: ");
+	scanf("%d",&military);
+	hours= military/100;
+	minutes= military%100;
+		
+		while (minutes<0 || minutes>59 || hours<0 || hours>23)
+	{
+		printf("You entered an incorrect time. Retry:  ");
+		scanf("%d",&military);
+		hours = military/100;
+		minutes = military%100;
+	}
+
+	
+		if(hours<12)
+		{
+			time[0]='A';
+			time[1]='M';
+			time[2]='\0';
+		}
+		else
+		{
+			time[0]='P';
+			time[1]='M';
+			time[2]='\0';
+		}
+		if(hours>12)
+			hours=hours-12;
+		if(hours==0)
+			hours=12;
+
+
+	printf("It is: %d:%.2d %s\n", hours, minutes, time );
+	 system("pause");
+}
