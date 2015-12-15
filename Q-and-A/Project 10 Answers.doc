@@ -1,0 +1,137 @@
+Project #10
+Immad Mohamed
+Due Sunday 4/8/2012 by 11:59 PM
+No delay is accepted
+For each day late submission 2 points penalty is incurred.
+Post your answer in the folder All Projects which is in the folder Assignments on the blackboard.
+If you have any question please email me at mbadii@pace.edu
+
+Write the following two exercises. Copy and paste your program under the word: Answer in this document. Do not paste the output of your program. I run your program with different sets of data. Therefore test your program truly and carefully by considering all the special cases.
+
+If your program needs an input file name it: a.txt.
+If your program needs an output file name it: b.txt.
+
+Do not post the input and output files. I make them myself to test your programs.
+
+Question 1: 
+Write a program to read all the characters of an input file named: a.txt and output them into an output file named: b.txt by outputting a hyphens (i.e. -) in place of spaces. For example if the content of a.txt is:
+
+abc de
+xy       12 4
+
+The content of b.txt must be:
+abc-de
+xy-------12 4
+
+Note that this is an example. The input file can have many lines.
+
+Hints: Look at example 4&5 of lecture 10
+Answer:
+#include "stdafx.h"
+#include <stdio.h>
+
+int main()
+{
+	FILE *inFile;
+	int endoffile;
+	char read;
+
+	inFile = fopen("a.txt", "r");
+	while(endoffile != -1)
+	{
+		endoffile=fscanf(inFile, "%c", &read);
+		if(endoffile != -1)
+		{
+				if(read == ' ' )
+					read='-';
+				printf("%c", read);
+		}
+	}
+	printf("\n");
+	fclose(inFile);
+
+	fflush(stdin);
+	printf("\nHit enter to terminate the program");
+	getchar();
+}
+
+
+
+
+Question 2: 
+Write a program to accomplish the following:
+The program reads a positive number (maximum 100) for n and n integers from an input file named a.txt into an array of size 100.  The program then displays the sum of every two numbers from both ends. For example if we have 11 integers in the file as follows:
+
+11
+1 2 5 4 15 -12 
+25 -11 -9 10 13
+
+The display output should be:
+14
+12
+-4
+-7
+40
+-24
+
+This means: (1 + 13), (2 + 10), (5 + (-9)), (4 + (-11)), (15 + 25), and (-12 + (-12)).
+Note that when the number of numbers is odd (like 11 above) we add the middle element (like -12 above) with itself.
+Note that this is an example. We may have any numbers of integers in the file. But the numbers of integers must not go beyond 100.
+
+Note: You must not define more than one array of size 100 in your program.
+Answer:
+#include "stdafx.h"
+#include <stdio.h>
+
+int main()
+{
+	FILE *inFile;
+	int inc, dec, half, dif, endoffile, numbers,  a[100];
+
+	inFile = fopen("a.txt", "r");
+
+	for(inc=0;endoffile != -1;inc++)
+	{
+		endoffile=fscanf(inFile, "%i", &numbers);
+		if(endoffile!=-1)
+		{
+		a[inc]=numbers;
+		}
+	}
+	inc=inc -2;
+	half= (inc/2) + 1;
+	dec=inc;
+
+	if(inc%2==0)
+	{
+		inc=1;
+		while(inc<=half)
+		{
+			dif=a[dec]+a[inc];
+			dec--;
+			inc++;
+			printf(" %i \n", dif);
+		}
+	}
+	else if(inc%2==1)
+	{
+		inc=1;
+		half=half+1;
+		while(inc<half)
+		{
+			dif=a[dec]+a[inc];
+			dec--;
+			inc++;
+			printf(" %i \n", dif);
+		}
+	}
+	
+
+	
+	printf("\n");
+	fclose(inFile);
+
+	fflush(stdin);
+	printf("\nHit enter to terminate the program");
+	getchar();
+}
