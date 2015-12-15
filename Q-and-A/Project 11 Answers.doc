@@ -1,0 +1,131 @@
+Project #11
+Due Sunday 4/15/2012 by 11:59 PM
+Immad Mohamed
+No delay is accepted
+For each day late submission 2 points penalty is incurred.
+Post your answer in the folder All Projects which is in the folder Assignments on the blackboard.
+If you have any question please email me at mbadii@pace.edu
+
+Since lecture 10 is the most important concept in the language C I am asking you to write two more programs on this lecture.
+
+Write the following two exercises. Copy and paste your program under the word: Answer in this document. Do not paste the output of your program. I run your program with different sets of data. Therefore test your program truly and carefully by considering all the special cases.
+
+
+Question 1: 
+
+Write a program to accomplish the following:
+The program reads a positive number (maximum 100) for n and n positive integers from the keyboard. The program then displays all the odd numbers in one line and all the even numbers on the next line.
+
+The following is a sample dialog. But your program must work for any sets of integers. The boldfaced numbers are what the user entered.
+
+How many numbers? Must enter a number in the range of 1 to 100: 15
+Enter 15 positive integers
+1       45      66      25      98     97      66
+3      4       5       7       88      3       45       7
+
+
+66      98      66      4       88
+
+1       45      25      97      3       5       7       3       45      7
+
+Answer:
+#include "stdafx.h"
+#include <stdio.h>
+
+int main()
+{
+	int a[100], amount,integers,i;
+
+	printf("Enter an integer for the amount of integers from 1 to 100: \n");
+	scanf("%i", &amount);
+
+	for(i=0;i<amount;i++)
+	{
+		printf("Enter number %i: \n", i +1);
+		scanf("%i", &integers);
+		a[i]=integers;
+	}
+
+	printf("The even numbers are: ");
+
+	for(i=0;i<amount;i++)
+	{
+		if(a[i] % 2 == 0)
+			printf("%i,", a[i]);
+	}
+	printf("\n");
+	printf("The odd numbers are: ");
+
+	for(i=0;i<amount;i++)
+	{
+		if(a[i] % 2 == 1)
+			printf("%i,", a[i]);
+	}
+
+	printf("\n");
+
+	fflush(stdin);
+	printf("\nHit enter to terminate the program");
+	getchar();
+}
+
+
+Question 2: 
+
+Write a program to read an arbitrary number of integers that are in the range 0 to 99 inclusive from the keyboard and counts how many occurrences of each are entered. After all inputs has been processed, print all the values (with number of occurrences) that were entered one or more times. The process of reading ends up when the user enters a negative number (obviously the negative number is not counted).
+The following is a sample dialog. But your program must work for any number of integers in the range 0 to 99 inclusive. The boldfaced line is what the user entered.
+
+Enter some integers, each in the range 0 to 99 inclusive. The last number should be: -1.
+2 3 4 2 55 66 55 99 25 3 4 2 25 34 78 3 55 -1
+The frequency of: 2 is 3
+The frequency of: 3 is 3
+The frequency of: 4 is 2
+The frequency of: 25 is 2
+The frequency of: 34 is 1
+The frequency of: 55 is 3
+The frequency of: 66 is 1
+The frequency of: 78 is 1
+The frequency of: 99 is 1
+
+
+Hints: Define an array of size 100. For any:
+0 entered increment the element at index 0.
+1 entered increment the element at index 1.
+2 entered increment the element at index 2.
+........
+........
+98 entered increment the element at index 98.
+99 entered increment the element at index 99.
+
+
+Answer:
+
+#include "stdafx.h"
+#include <stdio.h>
+
+int main()
+{
+	int a[100], amount,i;
+
+	printf("Enter some integers, each in the range 0 to 99 inclusive. The last number should be: -1. \n");
+	for(i=0;i<100;i++)
+		a[i]=0;
+	i=0;
+	while (i!=-1)
+	{
+		scanf("%i",&amount);
+			a[amount]= a[amount] + 1;
+			i=amount;
+	}
+	printf("\n");
+	for(i=0;i<100;i++)
+		if(a[i]!=0)
+			printf("The frequency of: %i is %i\n", i , a[i]);
+
+
+	printf("\n");
+
+	fflush(stdin);
+	printf("\nHit enter to terminate the program");
+	getchar();
+}
