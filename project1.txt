@@ -1,0 +1,3 @@
+echo -e "Hi, please type your name: \c "
+read  word
+echo "Welcome $word"
