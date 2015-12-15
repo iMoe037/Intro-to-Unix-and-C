@@ -1,0 +1,136 @@
+Project #3
+Due Sunday 2/5/2012 by 11:59 PM
+No delay is accepted
+For each day late submission 2 points penalty is incurred.
+Drop your answer in Digital Dropbox on blackboard.
+If you have any question please email me at mbadii@pace.edu
+
+Write the following scripts. Under the word: Answer 
+
+1. What is the output of the script under the phrase “The script is”
+Note: Watch the single-quotation. See example 7 in the lecture. Use notepad and type the script. Do not copy and paste.
+
+The script is:
+
+city="New York"
+country="USA"
+capital="Washington DC"
+me=`pwd`
+
+echo  “capital of $USA is $capital”
+echo  “capital of USA is $capital”
+echo "I love $city"
+echo $capital $city
+echo I am in $me
+echo tell me $(who am i)
+echo ${capital} is in $country
+
+Answer
+The output is:
+
+immad@ubuntu:~/CS271/proj3$ bash script1
+
+capital of  is Washington DC
+
+capital of USA is Washington DC
+
+I love New York
+
+Washington DC New York
+
+I am in /home/immad/CS271/proj3
+tell me immad pts/0 2012-02-05 00:39 (:0.0)
+
+Washington DC is in USA
+
+
+
+
+
+
+
+2. First define the following variables in your script:
+
+	Variable		Value
+
+	job			Computer Analyst
+
+	income			$80,000
+
+	place			New York
+
+Now complete script to print the following statement:
+
+I am a Computer Analyst in New York with income 80,000 dollar a year
+
+Note: In the output line the words Computer Analyst, New York , and 80,000 must come from the value of the variables.
+
+Answer
+The script is:
+job="Computer Analyst"
+
+income="80,000"
+
+place="New York"
+
+
+
+echo I am a $job in $place with an income of $income dollars a year.
+
+3. Write a shell script to input a name (any name) from the keyboard, and create a file with that name whose content is your full name.
+Note: The user should be able to enter any name for the name of the file.
+
+Answer
+The script is:
+echo Enter a name:
+
+read name
+
+echo "Immad Mohamed">"$name"
+
+4. Write a shell script for the following:
+The script prompts the user to enter four lines. 
+The script stores these lines into a file named: myfile 
+The script displays the sorted lines of the file on the screen.
+
+
+Continued
+
+
+
+
+
+
+Answer
+The script is:
+echo Please enter 4 lines, line1:
+
+read line1
+
+echo line2:
+
+read line2
+
+echo line3:
+
+read line3
+
+echo line4:
+
+read line4
+
+
+
+echo "$line1">myfile
+
+echo "$line2">>myfile
+
+echo "$line4">>myfile
+
+echo "$line3">>myfile
+
+
+
+sort myfile
+
+exec<myfile
