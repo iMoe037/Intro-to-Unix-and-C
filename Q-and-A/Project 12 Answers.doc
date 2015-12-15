@@ -1,0 +1,171 @@
+Project #12
+Immad Mohamed
+Due Tuesday 4/29/2012 by 11:59 PM
+No delay is accepted
+Post your answer in the folder All Projects which is in the folder Assignments on the blackboard.
+If you have any question please email me at mbadii@pace.edu
+
+This is your final project. As I mentioned in the syllabus the last project and any leftover project must be posted before or on 4/29/2012, 11:59 P.M. After this due date I do not accept any late project.
+
+I will post your final on 4/30/2012
+
+Please read lecture 11 carefully and more than one time. Practice all the examples before writing this project.
+Copy and paste your programs to this word document. Do not paste the output of your program. I run your program with different sets of data. Therefore test your program truly and carefully by considering all the possible special cases.
+
+
+Question 1: Complete the following function: calculate to return the result of the addition, subtraction, or multiplication of two integers. Your program must work for any two integers (positive, negative, or zero). The program asks the user to enter +, -, or *. The programs then ask for two integers. The program displays the result. 
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int calculate(int firstOperans, int secondOperand, char operation);
+
+int main(){
+	//Do not change this function. It is complete
+	int firstOperans, secondOperand, result;
+	char operation;
+	
+	printf("Enter +, -, or * to add, subtract, or multiply: ");
+	scanf("%c", &operation);
+	printf("Enter the two integers: ");
+	scanf("%d%d", &firstOperans, &secondOperand);
+	result = calculate(firstOperans, secondOperand, operation);
+	printf("The result is: %d\n", result);
+	system("pause");
+}
+
+int calculate(int firstOperans, int secondOperand, char operation){
+	//Complete this function
+
+
+}
+
+
+Three sample outputs:
+
+Enter +, -, or * to add, subtract, or multiply: +
+Enter the two integers: 10	20
+The result is: 30
+
+Enter +, -, or * to add, subtract, or multiply: *
+Enter the two integers: 12	5
+The result is: 60
+Enter +, -, or * to add, subtract, or multiply: -
+Enter the two integers: 12	27
+The result is: -15
+
+Answer:
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int calculate(int firstOperans, int secondOperand, char operation);
+
+int main(){
+	//Do not change this function. It is complete
+	int firstOperans, secondOperand, result;
+	char operation;
+	
+	printf("Enter +, -, or * to add, subtract, or multiply: ");
+	scanf("%c", &operation);
+	printf("Enter the two integers: ");
+	scanf("%d%d", &firstOperans, &secondOperand);
+	result = calculate(firstOperans, secondOperand, operation);
+	printf("The result is: %d\n", result);
+	system("pause");
+}
+
+int calculate(int firstOperans, int secondOperand, char operation)
+{
+	int total;
+	if(operation=='+')
+	{
+		total= firstOperans + secondOperand;
+	}
+	if(operation=='-')
+	{
+		total= firstOperans - secondOperand;
+	}
+	if(operation=='*')
+	{
+		total= firstOperans * secondOperand;
+	}
+	return total;
+}
+
+
+
+
+Question 2: Complete the following program. The function: display replaces each space in the string by a specific character.
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void display(char x[], char y);
+
+int main(){
+	//Do not change this function
+	char a[101], b;
+	printf("Enter a sentence no more than 100 characters\n");
+	gets(a);
+	printf("Enter a character\n");
+	scanf("%c", &b);
+	display(a, b);	//To replace every space by the content of variable: b
+	system("pause");
+}
+
+void display(char x[], char y){
+	//Complete this function. You may need strlen
+}
+
+Two sample outputs: The boldfaced lines are entered by the user. These are just sample examples. Your program should work for any string and any character:
+
+Enter a sentence no more than 100 characters
+After 4/29/2012, 11:59 P.M. I do not accept any late project.
+Enter a character
+!
+After!4/29/2012,!11:59!P.M.!I!do!not!accept!any!late!project.
+
+
+Enter a sentence no more than 100 characters
+Any project must be posted before or on due date.
+Enter a character
+?
+Any?project?must?be?posted?before?or?on?due?date.
+
+Answer:
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void display(char x[], char y);
+
+int main(){
+	//Do not change this function
+	char a[101], b;
+	printf("Enter a sentence no more than 100 characters\n");
+	gets(a);
+	printf("Enter a character\n");
+	scanf("%c", &b);
+	display(a, b);	//To replace every space by the content of variable: b
+	printf("\n");
+	system("pause");
+	
+}
+
+void display(char x[], char y)
+{
+	int length, i;
+	length = strlen(x);
+		for(i=0;i<length;i++)
+		{
+		if(x[i]==' ')
+			x[i]=y;
+		printf("%c", x[i]);
+		}
+}
