@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <stdlib.h>;
+#include <stdio.h>
+
+int main()
+{	int ants, breedingrate;
+
+		printf("How Many Ants?\n");
+		scanf("%i",&ants);
+		printf("What's the breeding rate?\n");
+		scanf("%i",&breedingrate);
+		printf("Day         Ants\n");
+			for(int days=1;ants<2000000;days++)
+			{
+				printf("%i         %i\n" ,days, ants);
+				ants= ants + (ants * breedingrate);
+			}
+			system("pause");
+}
