@@ -1,0 +1,168 @@
+Project #4
+Due Sunday 2/12/2012 by 11:59 PM
+No delay is accepted
+For each day late submission 2 points penalty is incurred.
+Post your answer in the folder All Projects which is in the folder Assignments on the blackboard.
+If you have any question please email me at mbadii@pace.edu
+
+Note: Do not email me your project for grading. Only email your project to me when you need help and have questions. In this case attach your project and describe what your questions are.
+
+Write the following scripts. Under the word: Answer.
+
+1. Write a shell script to input a filename and displays the number of words in the file. 
+Note: Assume the file exists in the current directory.
+
+Answer
+The script is:
+echo "Enter a name for a file" 
+read name 
+wc -w "$name"
+
+2. Write a shell script to input to enter an integer and display whether or not the number is even or odd.
+Hint: You need the modulo operation. The operation: % obtains the remainder of two integers. For example 17%5 evaluates to 2 which is the remainder of 17/5.
+
+For example:
+
+Enter an integer:
+56
+56 is even
+
+
+For example:
+Enter an integer:
+-127
+-127 is odd
+
+Note: The bold faced line is the input to the script. The above numbers are just for two runs of my script. Your script must work for any integer.
+
+
+
+Answer
+The script is:
+echo "Enter an integer to check if it's even or odd:" 
+read int 
+if((int%2==0)) 
+then 
+ echo "The number is even!" 
+else 
+ echo "Then number is odd!" 
+fi
+
+
+3. Write a shell script to input three words and display them in alphabetical order (like in a dictionary). You must not use the command sort.
+Hint: The easiest solution to this is:
+read the three words into the variables a, b, and c. Your goal is to move the smallest word into a, the smaller one into b, and the largest into c.
+a) Compare a and b and move the smaller into a and the bigger into b.
+b) Compare a and c and move the smaller into a and the bigger into c. Now a has the smallest word.
+c) Compare b and c and move the smaller into b and the bigger into c
+d) print a, b, and c
+
+Note that in general in order to exchange the content of two variables x and y you need an extra variable like: t. You cannot just write:
+x=y
+y=x
+
+If you make the above mistak the content of x and y will be the same.
+
+Answer
+The script is:
+echo "Enter word 1:"
+
+read a
+
+echo "Enter word 2:"
+
+read b
+
+echo "Enter word 3:"
+
+read c
+
+d="blah"
+
+
+
+if [[ $a > $b ]];
+
+then
+
+d=$b
+
+b=$a
+
+a=$d
+
+fi
+
+
+
+if [[ $a > $c ]];
+
+then
+
+d=$c
+
+c=$a
+
+a=$d
+
+fi
+
+
+
+if [[ $b > $c ]];
+
+then
+
+d=$c
+
+c=$b
+
+b=$d
+
+fi
+
+echo $a $b $c 
+
+4. Write a shell script with a case-statement that inputs a number in the range of 1 to 7 inclusive for week days and displays the name of the day. If the user enters a wrong number your script should inform the user to enter one of the numbers 1, 2, 3, 4, 5, 6 or 7. Note that day 1 of the week is Monday.
+Note: You must write this script with a case-statement. 
+
+Answer
+The script is:
+
+echo " Please enter an integer between 1-7 :"
+
+read a 
+
+
+
+case $a in
+
+ 1) b=Monday;;
+
+ 2) b=Tuesday;;
+
+ 3) b=Wednesday;;
+
+ 4) b=Thursday;;
+
+ 5) b=Friday;;
+
+ 6) b=Saturday;;
+
+ 7) b=Sunday;;
+
+ *) echo "Please enter an integer between 1-7"
+
+  b=0;;
+
+esac
+
+
+
+if [[ $a>0&&$a<7 ]]
+
+then
+
+ echo "That number repersents the day "$b""
+
+fi			
