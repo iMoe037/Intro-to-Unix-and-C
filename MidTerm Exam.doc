@@ -1,0 +1,284 @@
+Midterm test
+Immad Mohamed
+Due: 3/04/2012, 11:59 P.M.
+
+No delay is accepted whatsoever. After the due date I grade the test for 0
+Post your answer in the folder All Projects which is in the folder Assignments on the blackboard.
+I cannot answer the questions to help you, but if you like to clarify anything about the questions email me at  HYPERLINK "mailto:mbadii@pace.edu"mbadii@pace.edu. In this case let me know which part of a question is not clear for you.
+
+Note: This is an individual test. You must not communicate with each other for this test.
+The first and the last questions are for 10 points each and the others are for 20 points each.
+
+1. Write a script to do the following:
+a. Creates a directory named: myDir
+b. Move to this directory.
+c. Create a file named: myFile1 by writing commands to add the following two lines. For example your program should ask the user what her/his name is, reads the name, and adds the name to the file:
+  I. Your name
+  II. Your student ID
+d. Copy this file to a file named: myFile2
+e. Delete the file: myFile1
+f. Display the content: myFile2
+g. Delete the file: myFile2
+h. Move to your main directory.
+i. Delete the directory: myDir.
+j. Display the message: Have a nice day
+
+Hints: Do all of these on the command prompt then write the script. If you use cd .. there should be a space between cd and ..
+
+Answer Below:
+mkdir myDir
+
+cd myDir
+
+echo "What's your name?"
+
+read a
+
+echo "What's your student ID?"
+
+read b
+
+echo "$a">myFile1
+
+echo "$b">>myFile1
+
+cp myFile1 myFile2
+
+rm myFile1
+
+cat myFile2
+
+rm myFile2
+
+cd /home/immad/CS271/midterm
+
+rm -r /home/immad/CS271/midterm/myDir
+
+echo "Have a nice day!"
+
+2. Write a script that asks for the user's age. If it is equal to or higher than 21, print a message saying that this user is allowed to drink alcohol. If the user's age is below 21, print a message telling the user how many year(s) he or she has to wait before legally being allowed to drink.
+
+Answer Below:
+echo "Enter your age:"
+
+read a
+
+if ((a >= 21))
+
+then
+
+echo "You're allowed to drink alcohol."
+
+else
+
+ years=$((21-a))
+
+echo "You will be able to drink alcohol in $years years."
+
+fi
+
+ 
+
+3. Convert the following nested if-statement to a case-statement.
+
+echo "Enter a grade letter, A,A-,B+,B,B-,C+,C, C-, D, D-, or F"
+read grade
+if [[ "$grade" == "A" || "$grade" == "A-" ]]
+then
+  echo "Your grade range is 90 to 100"
+elif [[ "$grade" == "B+"||"$grade" == "B"||"$grade" == "B-" ]]
+then
+  echo "Your grade range is 80 to 89.99"
+elif [[ "$grade" == "C+"||"$grade" == "C"|| "$grade" == "C-" ]]
+then
+  echo "Your grade range is 70 to 79.99"
+elif [[ "$grade" == "D+" || "$grade" == "D" ]]
+then
+  echo "Your grade range is 60 to 69.99"
+elif [[ "$grade" == "F" ]]
+then
+  echo "Your grade range is 0 to 59.99"
+else
+  echo "You entered a wrong letter grade"
+fi
+
+Answer Below:
+
+
+
+echo "Enter a grade letter, A,A-,B+,B,B-,C+,C, C-, D, D-, or F"
+
+read a
+
+grade=$( echo "$a" | tr -s  '[:lower:]'  '[:upper:]' )
+
+
+
+case $grade in
+
+ A) x="90-100";;
+
+ A-) x="90-100";;
+
+ B+) x="80-89.99";;
+
+ B) x="80-89.99";;
+
+ B-) x="80-89.99";;
+
+ C+) x="70-79.99";;
+
+ C) x="70-79.99";;
+
+ C-) x="70-79.99";;
+
+ D+) x="60-69.99";;
+
+ D) x="60-69.99";;
+
+ D-) x="60-69.99";;
+
+ F) x="0-59.99";;
+
+ *) echo "You entered a wrong letter grade!"
+
+    x=invalid;;
+
+
+
+esac
+
+ 
+
+if [  -n  "$x" ] 
+
+then
+
+  echo "Your grade range is $x"
+
+fi
+
+
+4. Convert the for-loop in the following script to a while-loop.
+
+echo "Enter a number"
+read n
+for((i=1; i <= n; i++))
+do
+  echo "Enter a number"
+  read a
+  if((a > 0))
+  then
+    count=$((count+1))
+  fi
+done
+echo "You entered $count positive number(s)"count=0
+
+
+Answer Below:
+
+
+
+echo "Enter a number"
+
+read n
+
+i=1
+
+while((i <= n))
+
+do
+
+  echo "Enter a number"
+
+  read a
+
+  if((a > 0))
+
+  then
+
+    count=$((count+1))
+
+  fi
+
+  i=$((i+1))
+
+done
+
+echo "You entered $count positive number(s)"count=0
+
+
+
+5. Complete the function named arith below to accomplish the following tasks:
+if the value of the variable a is less than the value of the variable b then call the function add, otherwise call the function sub.
+
+echo "Enter two integers"
+read a
+read b
+
+add()
+{
+  echo "$a + $b = $((a + b))"
+}
+
+sub()
+{
+  echo "$a - $b = $((a - b))"
+}
+
+arith()
+{
+  # Complete this function.
+}
+
+
+Answer Below:
+
+
+
+
+
+arith()
+
+{
+
+  if(($a<$b))
+
+   then
+
+    add
+
+   else
+
+    sub
+
+   fi
+
+}
+arith 
+
+6. The content of a file named: test is the same as the one in lecture 6 (page: 2). Describe the output of the following three commands in sections A, B, and C by completing the lines that starts with the word: Description .
+
+A) In the following command there is a single space after the letter I. Note that space also is a character like any other characters.
+
+mbadii@vulcan:~/myshell$ grep "I [w]" test
+I was born on May first.
+I was born on May 1st.
+I was born on May 1.
+
+Description: The command looks for any line that has an I followed by a space which is then followed by a w. Therefore all the lines contain I(space)W.
+ 
+B) In the following command there is a single space after the letter I. Note that space also is a character like any other characters.
+
+mbadii@vulcan:~/myshell$ grep "I [^w]" test
+Can I say hello to you?
+Yes I did finally and do it again.
+
+Description: The command looks for any line that has an I followed by a space. The [^w] means that we must negate anything after the I(space) that begins with a “w”.  Therefore the only answers in the test file are I(space)S or I(space)D
+
+C)
+mbadii@vulcan:~/myshell$ grep "ee\?el" test
+Do you feel the heat?
+
+Description: The command looks for any line that contains an e followed by one or no e. Then it is concluded with el. The answer contains the word feel. It uses the first e, not the second and the last two letters el which equals eel which is suitable in this situation.
+
